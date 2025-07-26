@@ -1,0 +1,19 @@
+{
+  "name": "LlamaExtract",
+  "displayName": "LlamaExtract",
+  "group": ["transform"],
+  "version": 1,
+  "description": "Extract structured data from files using LlamaCloud extraction agents",
+  "defaults": {
+    "name": "LlamaExtract"
+  },
+  "inputs": ["main"],
+  "outputs": ["main"],
+  "credentials": [
+    {
+      "name": "LlamaCloudApi",
+      "required": true
+    }
+  ],
+  "properties": []
+}

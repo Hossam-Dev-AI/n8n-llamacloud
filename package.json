@@ -1,19 +1,19 @@
 {
-  "name": "n8n-llamacloud",
+  "name": "n8n-nodes-llamacloud",
   "version": "1.0.0",
   "description": "LlamaCloud integration with n8n",
   "keywords": [
     "n8n-community-node-package"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/Hossam-Dev-AI/n8n-llamacloud#readme",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Hossam Tabana",
+    "email": "hossam.tabana@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/Hossam-Dev-AI/n8n-llamacloud.git"
   },
   "engines": {
     "node": ">=20.15"
@@ -47,7 +47,8 @@
     "eslint-plugin-n8n-nodes-base": "^1.16.3",
     "gulp": "^5.0.0",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "rimraf": "^3.0.2"
   },
   "peerDependencies": {
     "n8n-workflow": "*"

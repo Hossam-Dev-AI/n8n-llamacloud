@@ -13,7 +13,7 @@ import {
 export class LlamaParse implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'LlamaParse',
-        name: 'LlamaCloud',
+        name: 'llamaParse',
         icon: 'file:llamacloud.svg',
         group: ['transform'],
         version: 1,
@@ -61,7 +61,7 @@ export class LlamaParse implements INodeType {
                         name: 'Parse',
                         value: 'parse',
                         description: 'Parse a PDF File',
-                        action: 'Parse a PDF File',
+                        action: 'Parse a PDF file',
                     },
                 ],
                 default: 'parse',
@@ -94,7 +94,7 @@ export class LlamaParse implements INodeType {
         const returnData = [];
         const resource = this.getNodeParameter('resource', 0) as string;
         const operation = this.getNodeParameter('operation', 0) as string;
-        
+
         // For each item, make an API call to create a contact
         for (let i = 0; i < items.length; i++) {
             if (resource === 'parsing') {
@@ -104,16 +104,16 @@ export class LlamaParse implements INodeType {
                     // Get additional fields input
                     const credentials = await this.getCredentials("LlamaCloudApi")
                     const apiKey = credentials.apiKey as string;
-                    
+
                     const reader = new LlamaParseReader(
                         { resultType: "markdown", apiKey: apiKey }
                     )
-                    
+
                     const documents = await reader.loadData(filePath);
-                    
+
                     for (let j = 0; j < documents.length; j++) {
-                        returnData.push(documents[i].toJSON())
-                    }    
+                        returnData.push(documents[j].toJSON())
+                    }
                 }
             }
         }

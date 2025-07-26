@@ -1,0 +1,19 @@
+{
+  "name": "LlamaParse",
+  "displayName": "LlamaParse",
+  "group": ["transform"],
+  "version": 1,
+  "description": "Parse PDF files and extract content in markdown format",
+  "defaults": {
+    "name": "LlamaParse"
+  },
+  "inputs": ["main"],
+  "outputs": ["main"],
+  "credentials": [
+    {
+      "name": "LlamaCloudApi",
+      "required": true
+    }
+  ],
+  "properties": []
+}

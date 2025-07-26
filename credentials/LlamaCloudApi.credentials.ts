@@ -6,14 +6,18 @@ import {
 } from 'n8n-workflow';
 
 export class LlamaCloudApi implements ICredentialType {
-	name = 'LlamaCloudApi';
-	displayName = 'LlamaCloud API Key';
+	name = 'llamaCloudApi';
+	displayName = 'LlamaCloud API';
+	documentationUrl = 'https://docs.cloud.llamaindex.ai/';
 	properties: INodeProperties[] = [
 		{
 			displayName: 'API Key',
 			name: 'apiKey',
 			type: 'string',
 			default: '',
+			typeOptions: {
+				password: true,
+			},
 		},
 	];
 

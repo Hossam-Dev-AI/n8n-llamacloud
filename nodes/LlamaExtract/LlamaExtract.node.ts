@@ -13,7 +13,7 @@ import {
 export class LlamaExtract implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'LlamaExtract',
-        name: 'LlamaExtract',
+        name: 'llamaExtract',
         icon: 'file:llamacloud.svg',
         group: ['transform'],
         version: 1,
@@ -43,7 +43,7 @@ export class LlamaExtract implements INodeType {
                 default: 'extracting',
                 noDataExpression: true,
                 required: true,
-                description: 'Extract Data From a File and Get Elegant Structured Information about it.',
+                description: 'Extract Data From a File and Get Elegant Structured Information about it',
             },
             {
                 displayName: 'Operation',
@@ -61,14 +61,14 @@ export class LlamaExtract implements INodeType {
                         name: 'Extract',
                         value: 'extract',
                         description: 'Extract Data from a File',
-                        action: 'Extract Data from a File',
+                        action: 'Extract data from a file',
                     },
                 ],
                 default: 'extract',
                 noDataExpression: true,
             },
              {
-                displayName: 'Agent Id',
+							displayName: 'Agent ID',
                 name: 'agentId',
                 type: 'string',
                 required: true,
@@ -84,7 +84,7 @@ export class LlamaExtract implements INodeType {
                 },
                 default:'',
                 placeholder: '',
-                description:'Extraction Agent Id',
+                description:'Extraction Agent ID',
             },
             {
                 displayName: 'File Path',
@@ -113,7 +113,7 @@ export class LlamaExtract implements INodeType {
         const returnData = [];
         const resource = this.getNodeParameter('resource', 0) as string;
         const operation = this.getNodeParameter('operation', 0) as string;
-        
+
         // For each item, make an API call to create a contact
         for (let i = 0; i < items.length; i++) {
             if (resource === 'extracting') {
@@ -123,12 +123,12 @@ export class LlamaExtract implements INodeType {
                     // Get additional fields input
                     const credentials = await this.getCredentials("LlamaCloudApi");
                     const apiKey = credentials.apiKey as string;
-                    
+
                     const agentId = this.getNodeParameter('agentId', i) as string;
-                    
+
                     const result = await extractDataFromFile(apiKey, agentId, filePath)
-                    
-                    returnData.push(result)  
+
+                    returnData.push(result)
                 }
             }
         }
