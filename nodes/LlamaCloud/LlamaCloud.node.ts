@@ -27,7 +27,7 @@ export class LlamaCloud implements INodeType {
         outputs: [NodeConnectionType.Main],
         credentials: [
             {
-                name: "LlamaCloudApi",
+                name: "llamaCloudApi",
                 required: true,
             }
         ],
@@ -46,7 +46,7 @@ export class LlamaCloud implements INodeType {
 	// The execute method will go here
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
 		// Get parameters from node
-		const credentials = await this.getCredentials("LlamaCloudApi");
+		const credentials = await this.getCredentials("llamaCloudApi");
         const apiKey = credentials.apiKey as string;
 		const indexName = this.getNodeParameter('indexName', 0) as string;
 		const items = this.getInputData();

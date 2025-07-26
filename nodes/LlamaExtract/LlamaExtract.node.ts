@@ -25,7 +25,7 @@ export class LlamaExtract implements INodeType {
         outputs: [NodeConnectionType.Main],
         credentials: [
             {
-                name: "LlamaCloudApi",
+                name: "llamaCloudApi",
                 required: true,
             }
         ],
@@ -121,7 +121,7 @@ export class LlamaExtract implements INodeType {
                     // Get email input
                     const filePath = this.getNodeParameter('filePath', i) as string;
                     // Get additional fields input
-                    const credentials = await this.getCredentials("LlamaCloudApi");
+                    const credentials = await this.getCredentials("llamaCloudApi");
                     const apiKey = credentials.apiKey as string;
 
                     const agentId = this.getNodeParameter('agentId', i) as string;
