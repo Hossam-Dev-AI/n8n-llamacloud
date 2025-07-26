@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-llamacloud",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "LlamaCloud integration with n8n",
   "keywords": [
     "n8n-community-node-package"
@@ -33,12 +33,12 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/llamaCloudApi.credentials.js"
+      "dist/credentials/LlamaCloudApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/LlamaParse/llamaParse.node.js",
-      "dist/nodes/LlamaExtract/llamaExtract.node.js",
-      "dist/nodes/LlamaCloud/llamaCloud.node.js"
+      "dist/nodes/LlamaParse/LlamaParse.node.js",
+      "dist/nodes/LlamaExtract/LlamaExtract.node.js",
+      "dist/nodes/LlamaCloud/LlamaCloud.node.js"
     ]
   },
   "devDependencies": {
